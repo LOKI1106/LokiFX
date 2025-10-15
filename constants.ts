@@ -43,8 +43,8 @@ export const PORTFOLIO_DATA: Niche[] = [
     title: 'Music Video / Montage',
     description: 'Beat sync, effects, motion rhythm',
     projects: [
-      { id: 10, title: 'CR7', description: 'Music video montage.', thumbnailUrl: 'Public/thumnails/cr7.png', videoUrl: 'Public/Videos/cr7.MOV' },
-      { id: 11, title: 'anime', description: 'High-speed montage.', thumbnailUrl: 'Public/thumnails/Anime.png', videoUrl: 'Public/Videos/anime.mp4' },
+      { id: 10, title: 'CR7', description: 'Music video montage.', thumbnailUrl: '/Public/thumnails/cr7.png', videoUrl: '/Public/Videos/cr7.MOV' },
+      { id: 11, title: 'anime', description: 'High-speed montage.', thumbnailUrl: '/Public/thumnails/Anime.png', videoUrl: '/Public/Videos/anime.mp4' },
     ]
   },
    {
