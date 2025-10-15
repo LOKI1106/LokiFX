@@ -33,9 +33,9 @@ export const PORTFOLIO_DATA: Niche[] = [
     title: 'Commercial / Product Ad',
     description: 'Logo animation, typography, focus pulls, motion graphics',
     projects: [
-      { id: 7, title: 'iPhone 17', description: 'Concept ad.', thumbnailUrl: 'Public/thumnails/iphone.png', videoUrl: 'Public/Videos/iphone17.MOV' },
-      { id: 8, title: '3D Text', description: 'Text animation.', thumbnailUrl: 'Public/thumnails/fx.png', videoUrl: 'Public/Videos/PENZOID CLASSIC.mkv' },
-      { id: 9, title: 'Diet Coke', description: 'Refreshing product spot.', thumbnailUrl: 'Public/thumnails/coke.png', videoUrl: 'Public/Videos/Coke.MOV' },
+      { id: 7, title: 'iPhone 17', description: 'Concept ad.', thumbnailUrl: '/thumnails/iphone.png', videoUrl: '/Videos/iphone17.MOV' },
+      { id: 8, title: '3D Text', description: 'Text animation.', thumbnailUrl: '/thumnails/fx.png', videoUrl: '/Videos/PENZOID CLASSIC.mkv' },
+      { id: 9, title: 'Diet Coke', description: 'Refreshing product spot.', thumbnailUrl: '/thumnails/coke.png', videoUrl: '/Videos/Coke.MOV' },
     ]
   },
   {
@@ -43,7 +43,7 @@ export const PORTFOLIO_DATA: Niche[] = [
     title: 'Music Video / Montage',
     description: 'Beat sync, effects, motion rhythm',
     projects: [
-      { id: 10, title: 'CR7', description: 'Music video montage.', thumbnailUrl: '/Public/thumnails/cr7.png', videoUrl: '/Public/Videos/cr7.MOV' },
+      { id: 10, title: 'CR7', description: 'Music video montage.', thumbnailUrl: '/thumnails/cr7.png', videoUrl: '/Public/Videos/cr7.MOV' },
       { id: 11, title: 'anime', description: 'High-speed montage.', thumbnailUrl: '/Public/thumnails/Anime.png', videoUrl: '/Public/Videos/anime.mp4' },
     ]
   },
