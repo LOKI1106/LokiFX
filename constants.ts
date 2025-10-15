@@ -6,8 +6,8 @@ export const PORTFOLIO_DATA: Niche[] = [
     title: 'Event / Aftermovie',
     description: 'Dynamic edits capturing the energy and emotion of live events.',
     projects: [
-      { id: 1, title: '2024 Freshers', description: 'High-energy aftermovie.', thumbnailUrl: 'Public/thumnails/freshers.png', videoUrl: 'Public/Videos/freshers.MOV' },
-      { id: 2, title: 'Nirvana', description: 'Capturing the festival vibe.', thumbnailUrl: 'Public/thumnails/nirvana.png', videoUrl: 'Public/Videos/nirvana.MOV' },
+      { id: 1, title: '2024 Freshers', description: 'High-energy aftermovie.', thumbnailUrl: '/thumnails/freshers.png', videoUrl: '/Videos/freshers.MOV' },
+      { id: 2, title: 'Nirvana', description: 'Capturing the festival vibe.', thumbnailUrl: '/thumnails/nirvana.png', videoUrl: '/Videos/nirvana.MOV' },
     ]
   },
   {
@@ -15,8 +15,8 @@ export const PORTFOLIO_DATA: Niche[] = [
     title: 'Cinematic / Short Film',
     description: 'Story-driven visuals with professional color grading and effects.',
     projects: [
-      { id: 3, title: 'Short Film', description: 'A gripping narrative short.', thumbnailUrl: 'Public/thumnails/shortfilm.png', videoUrl: 'https://youtu.be/PzOK8GWkllE?si=RXV-2aWvMNZorsrb' },
-      { id: 4, title: 'New York', description: 'Cinematic city scape.', thumbnailUrl: 'Public/thumnails/newyork.png', videoUrl: 'Public/Videos/new york.MOV' },
+      { id: 3, title: 'Short Film', description: 'A gripping narrative short.', thumbnailUrl: '/thumnails/shortfilm.png', videoUrl: 'https://youtu.be/PzOK8GWkllE?si=RXV-2aWvMNZorsrb' },
+      { id: 4, title: 'New York', description: 'Cinematic city scape.', thumbnailUrl: '/thumnails/newyork.png', videoUrl: '/Videos/new york.MOV' },
     ]
   },
   {
@@ -24,8 +24,8 @@ export const PORTFOLIO_DATA: Niche[] = [
     title: 'Travel / Vlog',
     description: 'Visual stories crafted with emotion, depth, and atmosphere—shot like scenes straight out of New York cinema.',
     projects: [
-      { id: 5, title: 'Hyderabad', description: 'Exploring the city of pearls.', thumbnailUrl: 'Public/thumnails/hyderabda.png', videoUrl: 'Public/Videos/hdyerabad.MOV' },
-      { id: 6, title: 'Dubai', description: 'A journey through the desert metropolis.', thumbnailUrl: 'Public/thumnails/Dubai.png', videoUrl: 'Public/Videos/dubai.MOV' },
+      { id: 5, title: 'Hyderabad', description: 'Exploring the city of pearls.', thumbnailUrl: '/thumnails/hyderabda.png', videoUrl: '/Videos/hdyerabad.MOV' },
+      { id: 6, title: 'Dubai', description: 'A journey through the desert metropolis.', thumbnailUrl: '/thumnails/Dubai.png', videoUrl: '/Videos/dubai.MOV' },
     ]
   },
   {
@@ -43,8 +43,8 @@ export const PORTFOLIO_DATA: Niche[] = [
     title: 'Music Video / Montage',
     description: 'Beat sync, effects, motion rhythm',
     projects: [
-      { id: 10, title: 'CR7', description: 'Music video montage.', thumbnailUrl: '/thumnails/cr7.png', videoUrl: '/Public/Videos/cr7.MOV' },
-      { id: 11, title: 'anime', description: 'High-speed montage.', thumbnailUrl: '/Public/thumnails/Anime.png', videoUrl: '/Public/Videos/anime.mp4' },
+      { id: 10, title: 'CR7', description: 'Music video montage.', thumbnailUrl: '/thumnails/cr7.png', videoUrl: '/Videos/cr7.MOV' },
+      { id: 11, title: 'anime', description: 'High-speed montage.', thumbnailUrl: '/thumnails/Anime.png', videoUrl: '/Videos/anime.mp4' },
     ]
   },
    {
@@ -52,10 +52,10 @@ export const PORTFOLIO_DATA: Niche[] = [
     title: 'Social Media / Reels',
     description: 'Vertical short edits (trendy, energetic)',
     projects: [
-      { id: 14, title: 'Spider-Man', description: 'Workout montage.', thumbnailUrl: 'Public/thumnails/spidy.png', videoUrl: 'Public/Videos/spidy.MOV' },
-      { id: 15, title: 'DeadPool Motion-Effects', description: 'Trendy style reel.', thumbnailUrl: 'Public/thumnails/deapool1.png', videoUrl: 'Public/Videos/hotdeadpool.mp4' },
-      { id: 16, title: 'DeadPool--Captions', description: 'Text Animation-reel.', thumbnailUrl: 'Public/thumnails/deadpool.png', videoUrl: 'Public/Videos/deadpool.mp4' },
-      { id: 17, title: 'BMW', description: 'Slow-Phased Car edit.', thumbnailUrl: 'Public/thumnails/bmw.png', videoUrl: 'Public/Videos/BMW.mp4' },
+      { id: 14, title: 'Spider-Man', description: 'Workout montage.', thumbnailUrl: '/thumnails/spidy.png', videoUrl: '/Videos/spidy.MOV' },
+      { id: 15, title: 'DeadPool Motion-Effects', description: 'Trendy style reel.', thumbnailUrl: '/thumnails/deapool1.png', videoUrl: '/Videos/hotdeadpool.mp4' },
+      { id: 16, title: 'DeadPool--Captions', description: 'Text Animation-reel.', thumbnailUrl: '/thumnails/deadpool.png', videoUrl: '/Videos/deadpool.mp4' },
+      { id: 17, title: 'BMW', description: 'Slow-Phased Car edit.', thumbnailUrl: '/thumnails/bmw.png', videoUrl: '/Videos/BMW.mp4' },
     ]
   },
 ];
