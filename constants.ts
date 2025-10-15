@@ -15,7 +15,7 @@ export const PORTFOLIO_DATA: Niche[] = [
     title: 'Cinematic / Short Film',
     description: 'Story-driven visuals with professional color grading and effects.',
     projects: [
-      { id: 3, title: 'Short Film', description: 'A gripping narrative short.', thumbnailUrl: '/thumnails/shortfilm.png', videoUrl: 'https://youtu.be/PzOK8GWkllE?si=RXV-2aWvMNZorsrb' },
+      { id: 3, title: 'Short Film', description: 'A gripping narrative short.', thumbnailUrl: '/thumnails/shortfilm.png', videoUrl: '/Videos/shortfilm.mp4' },
       { id: 4, title: 'New York', description: 'Cinematic city scape.', thumbnailUrl: '/thumnails/newyork.png', videoUrl: '/Videos/new york.MOV' },
     ]
   },
