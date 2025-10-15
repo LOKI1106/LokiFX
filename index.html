@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LokiFX</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎥</text></svg>">
+
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="A modern portfolio for LokiFX, a video editor specializing in dynamic, story-driven content from event aftermovies to cinematic short films." />
+    <meta name="keywords" content="video editor, portfolio, LokiFX, motion graphics, after effects, premiere pro, cinematic, editing, freelance video editor" />
+    <meta name="author" content="LokiFX" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lokifx-portfolio.com/" />
+    <meta property="og:title" content="LokiFX | Video Editor Portfolio" />
+    <meta property="og:description" content="A modern portfolio for LokiFX, a video editor specializing in dynamic, story-driven content from event aftermovies to cinematic short films." />
+    <meta property="og:image" content="https://picsum.photos/seed/shortfilm/1200/630" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://lokifx-portfolio.com/" />
+    <meta property="twitter:title" content="LokiFX | Video Editor Portfolio" />
+    <meta property="twitter:description" content="A modern portfolio for LokiFX, a video editor specializing in dynamic, story-driven content from event aftermovies to cinematic short films." />
+    <meta property="twitter:image" content="https://picsum.photos/seed/shortfilm/1200/630" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'orbitron': ['Orbitron', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-cyan': '#00ffff',
+                        'dark-bg': '#0a0a0a',
+                        'light-bg': '#f5f5f5',
+                        'dark-text': '#1a1a1a',
+                        'light-text': '#f0f0f0',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a modern look */
+        
+         ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: #f5f5f5;
+        }
+        
+        .dark ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: #00cccc;
+            border-radius: 4px;
+        }
+        
+        .dark ::-webkit-scrollbar-thumb {
+            background: #00ffff;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Scroll Progress Bar */
+        
+        #scroll-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #00ffff;
+            width: 0%;
+            z-index: 100;
+            transition: width 0.1s ease-out;
+        }
+        /* Reduced Glitch Effect */
+        
+        .glitch-container {
+            position: relative;
+        }
+        
+        .glitch {
+            animation: glitch-anim 3s infinite linear alternate-reverse;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            overflow: hidden;
+            clip-path: inset(0);
+        }
+        
+        .glitch::before {
+            left: 1px;
+            text-shadow: -1px 0 #00ffff;
+            animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+        }
+        
+        .glitch::after {
+            left: -1px;
+            text-shadow: -1px 0 #ff00c4, 1px 1px #00ffff;
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+        
+        .dark .glitch::before,
+        .dark .glitch::after {
+            background: #0a0a0a;
+        }
+        
+        .light .glitch::before,
+        .light .glitch::after {
+            background: #f5f5f5;
+        }
+        
+        @keyframes glitch-anim {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-1px, 1px);
+            }
+            40% {
+                transform: translate(-1px, -1px);
+            }
+            60% {
+                transform: translate(1px, 1px);
+            }
+            80% {
+                transform: translate(1px, -1px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+        
+        @keyframes glitch-anim-1 {
+            0% {
+                clip-path: inset(5% 0 90% 0);
+            }
+            25% {
+                clip-path: inset(40% 0 58% 0);
+            }
+            50% {
+                clip-path: inset(80% 0 10% 0);
+            }
+            75% {
+                clip-path: inset(30% 0 65% 0);
+            }
+            100% {
+                clip-path: inset(90% 0 5% 0);
+            }
+        }
+        
+        @keyframes glitch-anim-2 {
+            0% {
+                clip-path: inset(80% 0 15% 0);
+            }
+            25% {
+                clip-path: inset(10% 0 85% 0);
+            }
+            50% {
+                clip-path: inset(55% 0 40% 0);
+            }
+            75% {
+                clip-path: inset(20% 0 78% 0);
+            }
+            100% {
+                clip-path: inset(70% 0 25% 0);
+            }
+        }
+        /* Fade Transitions */
+        
+        .fade-out {
+            animation: fadeOut 1s forwards;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    </style>
+    <script type="importmap">
+        { "imports": { "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/", "react/": "https://aistudiocdn.com/react@^19.2.0/", "react": "https://aistudiocdn.com/react@^19.2.0", "framer-motion": "https://aistudiocdn.com/framer-motion@^11.3.8", "react-intersection-observer":
+        "https://aistudiocdn.com/react-intersection-observer@^9.13.0" } }
+    </script>
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body class="bg-light-bg dark:bg-dark-bg text-dark-text dark:text-light-text font-montserrat transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
