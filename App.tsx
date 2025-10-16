@@ -18,7 +18,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      audioRef.current = new Audio('');
+      audioRef.current = new Audio('public/Music/Background Music For Videos YouTube VLOG Upbeat Corporate Instrumental Presentation [FREE DOWNLOAD].mp3');
       audioRef.current.loop = true;
     }
   }, []);
