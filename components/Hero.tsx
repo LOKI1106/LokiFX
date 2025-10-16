@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
         loop
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-25"
-        src="src/Videos/Showreel24.mp4"
+        src="/Videos/Showreel24.mp4"
       />
       
       <div 
