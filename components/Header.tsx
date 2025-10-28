@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { SunIcon } from './icons/SunIcon';
 import { MoonIcon } from './icons/MoonIcon';
@@ -15,6 +15,15 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, isMuted, toggleMute }) => {
   const [scrolled, setScrolled] = useState(false);
 
+  // Add audio management
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  // local mute state (initially muted until we know if autoplay works)
+  const [localMuted, setLocalMuted] = useState<boolean>(true);
+  // track whether the user has tapped the control
+  const [hasInteracted, setHasInteracted] = useState<boolean>(false);
+  // track if autoplay was attempted
+  const [autoplayAttempted, setAutoplayAttempted] = useState<boolean>(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -22,7 +31,87 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, isMuted, toggleMute
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
+  // only let parent prop overwrite local state after user has interacted
+  useEffect(() => {
+    if (hasInteracted) {
+      setLocalMuted(isMuted);
+    }
+  }, [isMuted, hasInteracted]);
+
+  // create the Audio instance once and attempt autoplay
+  useEffect(() => {
+    if (!audioRef.current) {
+      audioRef.current = new Audio('/Music/Background Music For Videos YouTube VLOG Upbeat Corporate Instrumental Presentation [FREE DOWNLOAD].mp3');
+      audioRef.current.loop = true;
+      audioRef.current.preload = 'auto';
+      audioRef.current.volume = 0.5; // set a reasonable volume
+      
+      // Attempt autoplay
+      const attemptAutoplay = async () => {
+        try {
+          await audioRef.current?.play();
+          // Autoplay succeeded
+          setLocalMuted(false);
+          setHasInteracted(true);
+          if (isMuted) {
+            toggleMute(); // sync parent to unmuted state
+          }
+        } catch (error) {
+          // Autoplay blocked - user will need to interact
+          setLocalMuted(true);
+        } finally {
+          setAutoplayAttempted(true);
+        }
+      };
+
+      attemptAutoplay();
+    }
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // run once
+
+  // react to localMuted changes: set muted and play/pause accordingly
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio || !autoplayAttempted) return;
+
+    if (!localMuted) {
+      audio.muted = false;
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // play can fail if browser blocks it
+        });
+      }
+    } else {
+      audio.pause();
+      audio.muted = true;
+    }
+  }, [localMuted, autoplayAttempted]);
+
+  // When user clicks the button:
+  // - On first interaction (if autoplay failed): mark hasInteracted and unmute/play audio
+  // - Afterwards: toggle mute
+  const handleToggleMute = () => {
+    if (!hasInteracted) {
+      setHasInteracted(true);
+      setLocalMuted(false); // start playing
+      if (isMuted) {
+        toggleMute(); // sync parent if needed
+      }
+    } else {
+      setLocalMuted((prev) => !prev);
+      toggleMute();
+    }
+  };
+
   const navLinks = [
     { name: 'Tools', href: '#tools' },
     { name: 'Portfolio', href: '#portfolio' },
@@ -63,11 +152,11 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, isMuted, toggleMute
             </nav>
             <div className="flex items-center space-x-4">
                <button
-                onClick={toggleMute}
+                onClick={handleToggleMute}
                 className="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:text-brand-cyan hover:bg-gray-300/50 dark:hover:bg-gray-700/50 transition-colors"
                 aria-label="Toggle mute"
               >
-                {isMuted ? <VolumeOffIcon className="w-6 h-6" /> : <VolumeUpIcon className="w-6 h-6" />}
+                {localMuted ? <VolumeOffIcon className="w-6 h-6" /> : <VolumeUpIcon className="w-6 h-6" />}
               </button>
               <button
                 onClick={toggleTheme}
