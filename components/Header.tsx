@@ -15,13 +15,12 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, isMuted, toggleMute }) => {
   const [scrolled, setScrolled] = useState(false);
 
-  // Add audio management
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  // local mute state (initially muted until we know if autoplay works)
+  
   const [localMuted, setLocalMuted] = useState<boolean>(true);
-  // track whether the user has tapped the control
+
   const [hasInteracted, setHasInteracted] = useState<boolean>(false);
-  // track if autoplay was attempted
+  
   const [autoplayAttempted, setAutoplayAttempted] = useState<boolean>(false);
 
   useEffect(() => {
@@ -32,14 +31,14 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme, isMuted, toggleMute
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // only let parent prop overwrite local state after user has interacted
+  
   useEffect(() => {
     if (hasInteracted) {
       setLocalMuted(isMuted);
     }
   }, [isMuted, hasInteracted]);
 
-  // create the Audio instance once and attempt autoplay
+  
   useEffect(() => {
     if (!audioRef.current) {
       audioRef.current = new Audio('/Music/Background Music For Videos YouTube VLOG Upbeat Corporate Instrumental Presentation [FREE DOWNLOAD].mp3');
