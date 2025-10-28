@@ -6,7 +6,7 @@ import { CheckmarkIcon } from './icons/CheckmarkIcon';
 
 const About: React.FC = () => {
   const socialLinks = [
-    { Icon: InstagramIcon, href: 'instagram.com/lokii.i2p', name: 'Instagram' },
+    { Icon: InstagramIcon, href: 'https://www.instagram.com/lokii.i2p/', name: 'Instagram' },
     { Icon: TwitterIcon, href: 'https://x.com/lokesh_navale', name: 'Twitter' },
     { Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/lokesh-navale?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app', name: 'LinkedIn' },
   ];
